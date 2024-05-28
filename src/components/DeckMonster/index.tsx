@@ -10,6 +10,7 @@ import { fetchPokemonMonster, setLoadingPokemonSlice } from '../../store/pokemon
 
 const DeckMonster = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const pokemonMonsterByType = useSelector((state: RootState) => state.pokemon.pokemonMonsterList)
     const loadingPokemonSlice = useSelector((state: RootState) => state.pokemon.loadingPokemonSlice)
@@ -32,6 +33,7 @@ const DeckMonster = () => {
             setPokemonList(result)
             setTotalPage(1302)
             setLoading(false)
+
         } catch (error) {
             console.log(error)
             setLoading(false)
@@ -46,9 +48,8 @@ const DeckMonster = () => {
 
     return (
         <div>
-
             <Grid>
-                <Row >
+                <Row>
                     {
                         loading || loadingPokemonSlice ?
                             <center>
@@ -66,24 +67,18 @@ const DeckMonster = () => {
                                     pokemonMonsterByType.map((value, index) => (
                                         <Col xl={8} key={index}>
                                             <CardMonster monster={value} handleClick={() => {
-                                                navigate(`/detail/${index}`)
+                                                navigate(`/detail/${value.name}`)
                                             }} />
                                         </Col>
                                     ))
                                     :
-                                    pokemonMonsterByType.length == 0 ?
-                                        <h3>Pokemon monster not found</h3>
-                                        :
-                                        pokemonDetail == undefined ?
-                                            <h3>Pokemon monster not found</h3>
-                                            :
-                                            pokemonList.map((value, index) => (
-                                                <Col xl={8} key={index}>
-                                                    <CardMonster monster={value} handleClick={() => {
-                                                        navigate(`/detail/${index}`)
-                                                    }} />
-                                                </Col>
-                                            ))
+                                    pokemonList.map((value, index) => (
+                                        <Col xl={8} key={index}>
+                                            <CardMonster monster={value} handleClick={() => {
+                                                navigate(`/detail/${value.name}`)
+                                            }} />
+                                        </Col>
+                                    ))
                     }
 
                 </Row>

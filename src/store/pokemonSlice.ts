@@ -32,10 +32,12 @@ export const pokemonSlice = createSlice({
         fetchPokemonMonsterDetail:(state,action)=>{
             state.pokemonMonsterObject = action.payload
             state.loadingPokemonSlice = false
+            state.pokemonMonsterList = []
         },
         fetchPokemonMonster: (state,action) =>{
             state.pokemonMonsterList = action.payload
             state.loadingPokemonSlice = false
+            state.pokemonMonsterObject = undefined
         }
     },
 

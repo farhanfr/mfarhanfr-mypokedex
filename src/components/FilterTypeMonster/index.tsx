@@ -31,7 +31,12 @@ const FilterTypeMonster = () => {
         dispatch(setLoadingPokemonSlice())
         try {
             const result = await fetchPokemonByType(typeMonster)
-            dispatch(fetchPokemonMonster(result))
+            if (result.length > 0) {
+                dispatch(fetchPokemonMonster(result))
+            }else{
+                alert("Pokemon monster not found")
+            }
+            
             dispatch(setPokemonTypeSelected(typeMonster))
         } catch (error) {
             console.log(error)

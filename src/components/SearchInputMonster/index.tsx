@@ -20,6 +20,7 @@ const SearchInputMonster = () => {
             const result = await fetchPokemonDetail(keyword)
             dispatch(fetchPokemonMonsterDetail(result.data))
         } catch (error) {
+            alert("Pokemon monster not found")
             dispatch(fetchPokemonMonsterDetail(undefined))
             console.log("error")
         }
