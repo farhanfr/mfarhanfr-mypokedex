@@ -1,0 +1,21 @@
+export const TypeColor = [
+    { name: "bug", color: "#7bcf00" },
+    { name: "dark", color: "#5a566a" },
+    { name: "dragon", color: "#0076ff" },
+    { name: "electric", color: "#ffde00" },
+    { name: "fairy", color: "#ff76ff" },
+    { name: "fighting", color: "#ff215b" },
+    { name: "fire", color: "#ff9900" },
+    { name: "flying", color: "#89bdff" },
+    { name: "ghost", color: "#4e6aff" },
+    { name: "grass", color: "#1cd80e" },
+    {  color: "#ff6b0d" },
+    {  color: "#2ee4c6" },
+    {  color: "#9fa39d" },
+    {  color: "#f149ff" },
+    {  color: "#ff6c64" },
+    {  color: "#d8bc5a" },
+    {  color: "#23a1bd" },
+    {  color: "#14a8ff" },
+  ];
+  
