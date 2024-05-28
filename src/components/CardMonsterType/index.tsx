@@ -1,18 +1,21 @@
 import React from 'react'
-import { FlexboxGrid, Panel } from 'rsuite'
+import { FlexboxGrid, Panel, Text } from 'rsuite'
 import { MonsterType } from '../../types/MonsterType'
+import { TypeColor } from '../../types/TypeColor'
 
-type CardMonsterTypeProps ={
-  data:MonsterType
-  handleClick:()=>void
-  
+type CardMonsterTypeProps = {
+ color:string
+  data: MonsterType
+  handleClick: () => void
+
 }
 
-const CardMonsterType = (props:CardMonsterTypeProps) => {
+const CardMonsterType = (props: CardMonsterTypeProps) => {
+
   return (
     <div>
-      <Panel bordered onClick={props.handleClick}>
-        <FlexboxGrid justify='center'>
+      <Panel bordered onClick={props.handleClick} style={{backgroundColor: props.color}}>
+        <FlexboxGrid justify='center'>    
           {/* <FlexboxGrid.Item colspan={6}>
             asas
           </FlexboxGrid.Item>
@@ -20,8 +23,11 @@ const CardMonsterType = (props:CardMonsterTypeProps) => {
           <FlexboxGrid.Item colspan={6}>
             {props.data.name}
           </FlexboxGrid.Item> */}
-            <FlexboxGrid.Item colspan={6}>
-            {props.data.name}
+          <FlexboxGrid.Item colspan={8}>
+            <img src={`./images/monster-type/${props.data.name}.svg`}/>
+          </FlexboxGrid.Item>
+          <FlexboxGrid.Item colspan={6}>
+            <Text weight='bold' style={{color:'white'}}>{props.data.name}</Text>
           </FlexboxGrid.Item>
         </FlexboxGrid>
       </Panel>

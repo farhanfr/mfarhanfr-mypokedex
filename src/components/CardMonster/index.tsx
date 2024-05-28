@@ -1,5 +1,5 @@
 import React from 'react'
-import { Panel } from 'rsuite'
+import { Panel, Text } from 'rsuite'
 import { Monster } from '../../types/Monster'
 
 type CardMonsterProps ={
@@ -13,9 +13,9 @@ const CardMonster = (props:CardMonsterProps) => {
   return (
     <div>
       <Panel shaded onClick={props.handleClick}>
-        <img src={imgUrl}/>
+        <center><img src={imgUrl} width={100}/></center>
         <div>
-        {props.monster.name}
+        <Text size={20} align='center' weight='bold'>{props.monster.name}</Text>
         </div>
       </Panel>
     </div>

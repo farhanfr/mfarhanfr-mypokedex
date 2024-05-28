@@ -6,6 +6,7 @@ import { fetchPokemonByType, fetchPokemonType } from '../../api/PokemonApi'
 import { useDispatch } from 'react-redux'
 import { fetchPokemonMonster, setLoadingPokemonSlice, setPokemonTypeSelected } from '../../store/pokemonSlice'
 import { Monster } from '../../types/Monster'
+import { TypeColor } from '../../types/TypeColor'
 
 const FilterTypeMonster = () => {
 
@@ -58,8 +59,8 @@ const FilterTypeMonster = () => {
                                 <Loader size='md' content="loading" />
                             </center>
                             :
-                            listMonsterType.map((value, index) => (
-                                <Col xl={6} key={index}><CardMonsterType data={value} handleClick={() => {
+                            listMonsterType?.map((value, index) => (
+                                <Col xl={6} key={index}><CardMonsterType color={TypeColor[index]?.color} data={value} handleClick={() => {
                                     handleFetchPokemonType(value.name)
 
                                 }} /></Col>
