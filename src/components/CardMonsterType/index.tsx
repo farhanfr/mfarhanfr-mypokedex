@@ -13,11 +13,14 @@ const CardMonsterType = (props:CardMonsterTypeProps) => {
     <div>
       <Panel bordered onClick={props.handleClick}>
         <FlexboxGrid justify='center'>
-          <FlexboxGrid.Item colspan={6}>
+          {/* <FlexboxGrid.Item colspan={6}>
             asas
           </FlexboxGrid.Item>
           <div style={{ width: '20px' }}></div>
           <FlexboxGrid.Item colspan={6}>
+            {props.data.name}
+          </FlexboxGrid.Item> */}
+            <FlexboxGrid.Item colspan={6}>
             {props.data.name}
           </FlexboxGrid.Item>
         </FlexboxGrid>

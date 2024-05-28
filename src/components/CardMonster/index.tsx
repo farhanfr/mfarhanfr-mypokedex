@@ -3,7 +3,6 @@ import { Panel } from 'rsuite'
 import { Monster } from '../../types/Monster'
 
 type CardMonsterProps ={
-  index:number
   monster:Monster
   handleClick:()=>void
   
