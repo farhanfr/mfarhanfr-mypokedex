@@ -43,11 +43,11 @@ const DetailPage = () => {
                                     <Divider/>
                                     <Text size={25} weight='bold'>{pokemon?.name}</Text>
                                     
-                                    <Text size={25}>{pokemon?.height} cm</Text>
+                                    <Text size={25}>Height: {pokemon?.height} cm</Text>
                                     
-                                    <Text size={25}>{pokemon?.stats[0].base_stat} Hp</Text>
+                                    <Text size={25}>Health: {pokemon?.stats[0].base_stat} Hp</Text>
                                     
-                                    <Text size={25}>{pokemon?.weight} Kg</Text>
+                                    <Text size={25}>Weight: {pokemon?.weight} Kg</Text>
                                   </Col>
                                   <Col md={812}>
                                     <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon?.id}.png`} width={500}/>
